@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block content %}
+
+    <div class="devis">
+        <div class="titre">
+            <h1>Votre devis</h1>
+        </div>
+
+        {% if hauteur > 1.50 %}
+            {% set coeff = 1.5 %}
+        {% else %}
+            {% set coeff = 1 %}
+        {% endif %}
+
+        {% if is_granted('ROLE_USER') %}
+            <!-- Contenu visible pour les utilisateurs connectés -->
+            <div class="formulaire">
+                <fieldset>
+                    {% if choix == "entreprise" %}
+
+                        Pour rappel cette haie : {{ maHaie.getNom() }} coûte {{ prix }}  €
+                        <br>
+                        {% set prix = prix * longueur * coeff %}
+                        {% set remise = 10 %}
+                        {% set MontantReduction = prix * remise / 100 %}
+                        {% set prixAvecRecuc = prix - MontantReduction %}
+                        <a>Vous êtes une entreprise, vous bénéficiez alors d'une remise de {{ remise }}%
+                            <br>
+                            <strong>Rappel --</strong> Mesure de la haie : Longueur {{ longueur }} m,
+                            Hauteur {{ hauteur }}
+                            m
+                            <br>
+                            Le montant de votre devis est de : {{ prixAvecRecuc }} €
+                        </a>
+
+                    {% else %}
+                        Pour rappel cette haie : {{ maHaie.getNom() }} coûte {{ prix }} €
+                        <br>
+                        {% set remise = 0 %}
+                        {% set prix = prix * longueur * coeff %}
+                        {% set prix = prix %}
+                        <a>Vous êtes un particulier.
+                            <br>
+                            <strong>Rappel --</strong> Mesure de la haie : Longueur {{ longueur }} m,
+                            Hauteur {{ hauteur }}
+                            m
+                            <br>
+                            Le montant de votre devis est de : {{ prix }} €
+                        </a>
+                    {% endif %}
+                </fieldset>
+            </div>
+    {% endif %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+
+{% block content %}
+    <div class="choix">
+        <div class="titre">
+            <h1>Choisissez votre catégorie.</h1>
+        </div>
+
+        <div class="formulaire">
+            <fieldset>
+                <form action="{{ path ('app_mesure') }}" method="post">
+                    <h2>Vous êtes : </h2>
+                    <div class="particulier">
+                        <input type="radio" name="btn-radio" value="particulier" id="particulier" checked>
+                        <label for="particulier">Un particulier</label>
+                    </div>
+                    <br>
+                    <div class="entreprise">
+                        <input type="radio" name="btn-radio" value="entreprise" id="entreprise">
+                        <label for="entreprise">Une entreprise</label>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn-suite"
+                                type="submit">
+                            Suite
+                        </button>
+
+                        {#                    <input type="submit" name="btn-suite" value="Suite"> #}
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+
+    </div>
+{% endblock %}

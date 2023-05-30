@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block content %}
+
+    <div class="mesure">
+        <div class="titre">
+            <h1>Description de votre haie</h1>
+        </div>
+
+        <div class="formulaire">
+            <fieldset>
+                <form action="{{ path ('app_devis') }}" method="post" class="form-choix" id="form-choix">
+                    <h2>Veuillez remplir les informations nécessaires pour votre haie :</h2>
+                    <div class="selection_haie">
+                        <select name="haie" id="haie" required>
+                            <option value="" disabled selected>-- Choisissez une catégorie --</option>
+                            {% for uneHaie in lesHaies %}
+                                <option value="{{uneHaie.getCode}}">{{uneHaie.getNom}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <br>
+                    <div class="longueur_haie">
+                        <label for="longueur">Longueur : </label> <input type="number" name="longueur" id="longueur" required>m
+                    </div>
+                    <br>
+                    <div class="hauteur_haie">
+                        <label for="hauteur">Hauteur : </label> <input type="number" name="hauteur" id="hauteur" required>m
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn-suite"
+                                type="submit">
+                            Suite
+                        </button>
+                        {#            <input type="submit" name="btn-suite" value="Suite"> #}
+                    </div>
+                </form>
+            </fieldset>
+
+        </div>
+
+
+
+    </div>
+{% endblock %}

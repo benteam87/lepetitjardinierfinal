@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block content %}
+    <h1>Devis</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ devi.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ devi.date ? devi.date|date('d-F-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Hauteur</th>
+                <td>{{ devi.hauteur }}</td>
+            </tr>
+            <tr>
+                <th>Longueur</th>
+                <td>{{ devi.longueur }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ devi.prix }}</td>
+            </tr>
+
+        <tr>
+            <th>Nom</th>
+            <td>{{ devi.nom }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_devis_crud_index') }}">back to list</a>
+
+    <a href="{{ path('app_devis_crud_edit', {'id': devi.id}) }}">edit</a>
+
+    {{ include('devis_crud/_delete_form.html.twig') }}
+{% endblock %}

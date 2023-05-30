@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #8ec6ff ;
+}
+
+/*      MENU    */
+
+nav li {
+    display: inline-block;
+    margin: 0 9px;
+    padding: 0 9px;
+}
+
+nav a {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+}
+
+
+
+/*.formulaire input[type="text"], .formulaire input[type="email"], .formulaire select {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*      BOUTON      */
+.btn-suite {
+    position:relative;
+    width: auto;
+    display:inline-block;
+    color:#ecf0f1;
+    text-decoration:none;
+    border-radius:5px;
+    border:solid 1px #3a85e1;
+    background: #3a85e1;
+    text-align:center;
+    padding:16px 18px 14px;
+    margin: 12px;
+    cursor: pointer;
+
+    transition: all 0.1s;
+
+    box-shadow: 0px 6px 0px #113159;
+}
+
+.btn-suite:active{
+    box-shadow: 0px 2px 0px #113159;
+    position:relative;
+    top:4px;
+}
+
+.titre{
+    text-align: center;
+}
+
+/*      CHOIX       */
+.choix{
+    padding: 10px;
+}
+.formulaire{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.formulaire fieldset{
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/*      MESURE      */
+
+.mesure{
+    padding: 10px;
+}
+
+/*      DEVIS       */
+
+.devis{
+    padding: 10px;
+}
+
+.table-devis {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-devis thead {
+    background-color: #f0f0f0;
+}
+
+.table-devis th,
+.table-devis td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.table-devis th {
+    font-weight: bold;
+    text-align: left;
+}
+
+.table-devis tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-devis tbody tr:hover {
+    background-color: #eaeaea;
+}
