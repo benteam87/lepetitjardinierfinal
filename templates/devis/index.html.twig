@@ -35,6 +35,11 @@
                             <br>
                             Le montant de votre devis est de : {{ prixAvecRecuc }} €
                         </a>
+                        <div class="redirection">
+                            <a href="{{ path ('app_devis_creer') }}">Oui</a>
+                            <a href="{{ path ('app_accueil') }}">Non</a>
+                        </div>
+
 
                     {% else %}
                         Pour rappel cette haie : {{ maHaie.getNom() }} coûte {{ prix }} €
@@ -50,6 +55,10 @@
                             <br>
                             Le montant de votre devis est de : {{ prix }} €
                         </a>
+                        <div class="redirection">
+                            <a href="{{ path ('app_devis_creer') }}">Oui</a>
+                            <a href="{{ path ('app_accueil') }}">Non</a>
+                        </div>
                     {% endif %}
                 </fieldset>
             </div>

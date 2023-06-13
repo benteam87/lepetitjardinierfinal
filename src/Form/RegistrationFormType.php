@@ -25,6 +25,10 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('nom', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => 'Nom'])
             ->add('prenom', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => 'Prénom'])
+            ->add('nom', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => 'Nom'])
+            ->add('adresse', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => 'Adresse'])
+            ->add('ville', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => 'Ville'])
+            ->add('cp', TextType::class, ['attr' => ['class' => 'form-control'], 'label' => 'Code Postal'])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Devis;
-use App\Form\CreerDevisType;
+use App\Form\DevisType;
 use App\Repository\DevisRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +16,7 @@ class MesDevisController extends AbstractController
     public function index(Request $request, DevisRepository $devisRepository): Response
     {
         $devis = new Devis();
-        $form = $this->createForm(CreerDevisType::class, $devis);
+        $form = $this->createForm(DevisType::class, $devis);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
@@ -26,7 +26,7 @@ class MesDevisController extends AbstractController
             return $this->redirectToRoute('app_mes_devis', [], Response::HTTP_SEE_OTHER);
         }
 
-        $devisListe = $devisRepository->findBy(['client' => $this->getUser()]);
+        $devisListe = $devisRepository->findBy(['user' => $this->getUser()]);
 
 
         return $this->render('mes_devis/index.html.twig', [

@@ -15,6 +15,9 @@
                 <th>Date</th>
                 <th>Hauteur</th>
                 <th>Longueur</th>
+                <th>Qualité</th>
+                <th>Haie</th>
+                <th>Prix</th>
                 <!-- Ajoutez d'autres en-têtes de colonnes selon vos besoins -->
             </tr>
             </thead>
@@ -22,8 +25,11 @@
             {% for devis in devisListe %}
                 <tr>
                     <td>{{ devis.date|date('Y-m-d') }}</td>
-                    <td>{{ devis.hauteur }}</td>
-                    <td>{{ devis.longueur }}</td>
+                    <td>{{ devis.hauteur }} m</td>
+                    <td>{{ devis.longueur }} m</td>
+                    <td>{{ devis.typeClient }}</td>
+                    <td>{{ devis.haie }}</td>
+                    <td>{{ devis.prix }}€</td>
                     <!-- Ajoutez d'autres colonnes avec les informations du devis -->
                 </tr>
             {% endfor %}

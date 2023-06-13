@@ -28,6 +28,9 @@ class Haie
     #[ORM\OneToMany(mappedBy: 'haie', targetEntity: Devis::class)]
     private Collection $devis;
 
+
+
+
     public function __construct()
     {
         $this->devis = new ArrayCollection();
@@ -81,6 +84,12 @@ class Haie
         return $this;
     }
 
+
+
+    public function __toString() {
+        return $this->nom;
+    }
+
     /**
      * @return Collection<int, Devis>
      */
@@ -111,7 +120,6 @@ class Haie
         return $this;
     }
 
-    public function __toString() {
-        return $this->nom;
-    }
+
+
 }

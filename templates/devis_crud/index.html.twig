@@ -4,7 +4,6 @@
 
 {% block content %}
     <h1>Devis index</h1>
-
     <table class="table">
         <thead>
             <tr>
@@ -12,6 +11,8 @@
                 <th>Date</th>
                 <th>Hauteur</th>
                 <th>Longueur</th>
+                <th>Qualité</th>
+                <th>Haie</th>
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -23,19 +24,19 @@
                 <td>{{ devi.date ? devi.date|date('Y-m-d') : '' }}</td>
                 <td>{{ devi.hauteur }}</td>
                 <td>{{ devi.longueur }}</td>
+                <td>{{ devi.typeClient }}</td>
+                <td>{{ devi.haie }}</td>
                 <td>{{ devi.prix }}</td>
                 <td>
-                    <a href="{{ path('app_devis_crud_show', {'id': devi.id}) }}">show</a>
-                    <a href="{{ path('app_devis_crud_edit', {'id': devi.id}) }}">edit</a>
+                    <a href="{{ path('app_devis_crud_show', {'id': devi.id}) }}">Voir</a>
+                    |
+                    <a href="{{ path('app_devis_crud_edit', {'id': devi.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
+            <tr><td colspan="6">Aucun enregistrement trouvé</td></tr>
         {% endfor %}
         </tbody>
     </table>
-
     <a href="{{ path('app_devis_crud_new') }}">Create new</a>
 {% endblock %}

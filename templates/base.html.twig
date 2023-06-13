@@ -26,7 +26,7 @@
     {% if is_granted('ROLE_ADMIN') %}
 
         <nav class="navbar navbar-expand-lg navbar-light nav">
-            <a class="navbar-brand" style="cursor: default">Le P'tit Jardinier !</a>
+            <img src="{{ asset('assets/upload/Le_ptit_jardinier.png') }}" alt="LePetitJardinier_logo" width="100px">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -83,7 +83,7 @@
     {% elseif is_granted('ROLE_USER') %}
         <!-- Contenu visible pour les utilisateurs connectés -->
         <nav class="navbar navbar-expand-lg navbar-light nav">
-            <a class="navbar-brand" style="cursor: default">Le P'tit Jardinier !</a>
+            <img src="{{ asset('assets/upload/Le_ptit_jardinier.png') }}" alt="LePetitJardinier_logo" width="100px">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -128,7 +128,7 @@
     {% else %}
         <!-- Contenu visible pour les utilisateurs non connectés -->
         <nav class="navbar navbar-expand-lg navbar-light nav">
-            <a class="navbar-brand" style="cursor: default">Le P'tit Jardinier !</a>
+            <img src="{{ asset('assets/upload/Le_ptit_jardinier.png') }}" alt="LePetitJardinier_logo" width="100px" height="100px">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
